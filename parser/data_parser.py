@@ -23,10 +23,10 @@ def get_data(links, list):
 			"certificate": soup.findAll('a', class_='ipc-link ipc-link--baseAlt ipc-link--inherit-color sc-8c396aa2-1 WIUyh')[0].text,
 			"rating": soup.findAll('span', class_='sc-7ab21ed2-1 jGRxWM')[0].text,
 			"description": soup.findAll('span', class_='sc-16ede01-2 gXUyNh')[0].text,
-			"director": soup.select('.ipc-metadata-list__item:nth-child(1) > a')[0].text,
-			"writer": soup.select('.ipc-metadata-list__item:nth-child(2) > a')[0].text,
-			"stars": soup.select('.ipc-metadata-list__item:nth-child(3) > a')[0].text,
-			"actors": soup.findAll('a', class_='sc-36c36dd0-1 QSQgP')[0].text,
+			"director": soup.select('li.ipc-metadata-list__item:first-child > div > ul > li > a')[0].text,
+			"writer": [soup.findAll('a', class_='ipc-metadata-list-item__list-content-item ipc-metadata-list-item__list-content-item--link')[0].text,
+			soup.findAll('a',class_='ipc-metadata-list-item__list-content-item ipc-metadata-list-item__list-content-item--link')[1].text],
+			"actors": [soup.findAll('a', class_='sc-36c36dd0-1 QSQgP')[i].text for i in range(len(soup.findAll('a', class_='sc-36c36dd0-1 QSQgP')))],
 			"genres": soup.findAll('a', class_='ipc-metadata-list-item__list-content-item ipc-metadata-list-item__list-content-item--link')[0].text,
 		}	
 
