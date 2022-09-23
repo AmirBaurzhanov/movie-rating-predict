@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup as bs
 import requests
 
-urls = [f'https://www.imdb.com/list/ls002209246/?st_dt=&mode=detail&page={i}&sort=list_order,asc' for i in range(1, 11)]
+urls = [f'https://www.imdb.com/list/ls002209246/?st_dt=&mode=detail&page={i}&sort=list_order,asc' for i in range(1, 2)]
 links = []
 
 def get_link(url, result):
@@ -17,7 +17,7 @@ def get_link(url, result):
 	return result
 
 
-for i in range(10):
+for i in range(1):
 	links = get_link(urls[i], links)
 
 with open(r'links.txt', 'w') as f:
