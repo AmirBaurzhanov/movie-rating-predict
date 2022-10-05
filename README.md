@@ -1,7 +1,7 @@
 # movie-rating-predict
 
-# My first pet project
+<h4> My first pet project </h4>
 
-# Here i did data collecting by parser
+<p> Here i did data collecting by parser </p>
 
-# And used Linear regression model to predict
+<p> And used Linear regression model to predict </p>
